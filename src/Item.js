@@ -8,13 +8,17 @@ function Item({ value, status }) {
       backgroundColor: "green",
       color: "black",
       textDecoration: "line-through",
-      display: "block",
+      display: "inline",
+      border: "1px solid black",
+      padding: "5px 10px 5px 10px",
     };
   } else {
     statusStyle = {
       backgroundColor: "red",
       color: "white",
-      display: "block",
+      display: "inline",
+      border: "1px solid black",
+      padding: "5px 10px 5px 10px",
     };
   }
   return (
