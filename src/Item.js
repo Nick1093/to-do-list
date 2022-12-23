@@ -10,7 +10,7 @@ function Item({ value, status }) {
       textDecoration: "line-through",
       display: "inline",
       border: "1px solid black",
-      padding: "5px 10px 5px 10px",
+      margin: "10px 500px 10px 15px",
     };
   } else {
     statusStyle = {
@@ -18,7 +18,7 @@ function Item({ value, status }) {
       color: "white",
       display: "inline",
       border: "1px solid black",
-      padding: "5px 10px 5px 10px",
+      margin: "10px 500px 10px 15px",
     };
   }
   return (

@@ -1,0 +1,23 @@
+.input {
+  /* margin-left: 750px; */
+  text-align: center;
+}
+
+ul {
+  margin-left: 500px;
+}
+
+.delete-buttons {
+  /* position: absolute;
+  right: 188px;
+  padding: 10px; */
+  border: 1px solid red;
+  /* margin-bottom: 20px; */
+}
+
+.finished-buttons {
+  /* position: absolute;
+  right: 108px;
+  padding: 10px; */
+  border: 1px solid green;
+}

@@ -36,6 +36,11 @@ function Input() {
     setItemList(newList);
   }
 
+  function deleteFinished(item) {
+    const newList = itemList.filter((done) => done !== item);
+    setFinishedList(newList);
+  }
+
   function moveFinished(item) {
     const newList = itemList.filter((todo) => todo !== item);
     setItemList([...newList]);
@@ -44,19 +49,21 @@ function Input() {
 
   return (
     <>
-      <input
-        type="text"
-        id="to-do-item"
-        name="to-do-item"
-        placeholder="e.g read book"
-        value={item}
-        onChange={getData}
-        onKeyDown={addItemEnter}
-      ></input>
-      <button id="submit" onClick={addItemButton}>
-        Submit
-        {/* <FontAwesomeIcon icon="fa-solid fa-circle-chevron-right" /> */}
-      </button>
+      <div className="input">
+        <input
+          type="text"
+          id="to-do-item"
+          name="to-do-item"
+          placeholder="e.g read book"
+          value={item}
+          onChange={getData}
+          onKeyDown={addItemEnter}
+        ></input>
+        <button id="submit" onClick={addItemButton}>
+          Submit
+          {/* <FontAwesomeIcon icon="fa-solid fa-circle-chevron-right" /> */}
+        </button>
+      </div>
 
       {/* render the list */}
       <ul>
@@ -64,8 +71,18 @@ function Input() {
           <>
             <li key={item}>
               <Item value={item} status={false}></Item>
-              <button onClick={() => deleteItem(item)}>Delete</button>
-              <button onClick={() => moveFinished(item)}>Finished</button>
+              <button
+                className="delete-buttons"
+                onClick={() => deleteItem(item)}
+              >
+                Delete
+              </button>
+              <button
+                className="finished-buttons"
+                onClick={() => moveFinished(item)}
+              >
+                Finished
+              </button>
             </li>
           </>
         ))}
@@ -77,7 +94,12 @@ function Input() {
           <>
             <li key={item}>
               <Item value={item} status={true}></Item>
-              <button onClick={() => deleteItem(item)}>Delete</button>
+              <button
+                className="delete-buttons"
+                onClick={() => deleteFinished(item)}
+              >
+                Delete
+              </button>
               {/* <button onClick={() => moveFinished(item)}>Finished</button> */}
             </li>
           </>
